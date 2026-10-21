@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechVoid — Where Technology Meets the Void</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Exo+2:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+
+<header class="nav">
+  <a href="#top" class="brand">TechVoid</a>
+  <nav><a href="#blog">Articles</a><a href="#subscribe">Newsletter</a></nav>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="bg"></canvas>
+  <div class="hero-inner">
+    <div class="logo" aria-hidden="true">
+      <svg viewBox="0 0 200 200">
+        <defs><filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <g fill="none" stroke="#5ff3ff" stroke-width="4" stroke-linejoin="round" filter="url(#glow)">
+          <circle cx="100" cy="100" r="88"/>
+          <path d="M52 62l6-22h66l8 24v44"/>
+          <path d="M40 112l92-8 28 14-92 14z"/>
+          <path d="M58 40l-8 66M72 122l54-5 8 4-54 6z" stroke-width="3"/>
+          <path d="M80 62l14 24 14-24-10 6-4 8-4-8z" stroke-width="3"/>
+        </g>
+      </svg>
+    </div>
+    <h1 class="wordmark">TechVoid</h1>
+    <p class="tagline"><span id="typed"></span><i class="caret"></i></p>
+    <a href="#blog" class="btn">Enter the Feed</a>
+  </div>
+</section>
+
+<main id="blog" class="wrap reveal">
+  <h2>Latest transmissions</h2>
+  <div class="controls">
+    <input id="search" type="search" placeholder="Search articles…" aria-label="Search articles">
+    <div class="tabs" id="tabs">
+      <button class="active" data-cat="All">All</button><button data-cat="AI">AI</button><button data-cat="Hardware">Hardware</button><button data-cat="Security">Security</button><button data-cat="Software">Software</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>No articles match. Try a different search or category.</p>
+</main>
+
+<section id="subscribe" class="wrap reveal">
+  <form class="news" id="news">
+    <h2>Get the signal</h2>
+    <p>One email a week. Tech news without the noise.</p>
+    <div class="row"><input type="email" id="email" placeholder="you@domain.com" required aria-label="Email"><button class="btn" type="submit">Subscribe</button></div>
+    <div class="ok" id="ok" hidden><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="23"/><path d="M14 27l8 8 16-17"/></svg><p>You're in. Check your inbox to confirm.</p></div>
+  </form>
+</section>
+
+<footer>© 2026 TechVoid. All signals reserved.</footer>
+
+<div class="modal" id="modal" hidden>
+  <article class="sheet" role="dialog" aria-modal="true">
+    <button class="close" id="close" aria-label="Close">×</button>
+    <div id="article"></div>
+  </article>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
